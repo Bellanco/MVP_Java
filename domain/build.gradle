@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'javax.inject:javax.inject:1'
+    compile libraries.retrofit
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+apply plugin: 'java'
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'javax.inject:javax.inject:1'
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

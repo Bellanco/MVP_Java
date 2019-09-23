@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+def libs = parent.ext.libraries
+def testLibs = parent.ext.testing
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.deromang.daggersample"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.appCompat
+
+    implementation libs.design
+
+    implementation libs.cardView
+
+
+    implementation libs.daggerCompile
+
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    compileOnly libs.daggerProvided
+
+    //BUTTERKNIFE
+    implementation libs.butterknife
+    annotationProcessor libs.butterknifeCompiler
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+    annotationProcessor libs.daggerApt
+
+    implementation project(":presentation")
+    implementation project(":data")
+
+    testImplementation testLibs.jUnit
+
+    androidTestCompile(testLibs.espresso, {
+
+        exclude group: 'com.android.support', module: 'support-annotations'
+
+    })
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}

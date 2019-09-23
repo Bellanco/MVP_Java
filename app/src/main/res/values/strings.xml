@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Find Recipes</string>
+    <string name="filter">Recipe Puppy</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="web_reference">Web Reference</string>
+    <string name="no_data_available">Looks like you don\'t have recipes</string>
+</resources>
