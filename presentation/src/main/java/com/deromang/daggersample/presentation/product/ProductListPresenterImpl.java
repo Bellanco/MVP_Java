@@ -5,8 +5,6 @@ import com.deromang.daggersample.domain.data.ProductList;
 import com.deromang.daggersample.domain.modules.api.APIClient;
 import com.deromang.daggersample.domain.modules.api.APIService;
 import com.deromang.daggersample.navigation.Navigator;
-import com.deromang.daggersample.presentation.main.MainPresenter;
-import com.deromang.daggersample.presentation.main.MainView;
 
 import java.util.List;
 

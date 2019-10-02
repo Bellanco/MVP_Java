@@ -6,9 +6,9 @@ dependencies {
 
     implementation 'javax.inject:javax.inject:1'
 
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
 
     implementation project(":domain")
-
 }
 
 sourceCompatibility = "1.7"
