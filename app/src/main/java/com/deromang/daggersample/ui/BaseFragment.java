@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.deromang.daggersample.R;
 import com.deromang.daggersample.deromang.modules.base.ActivityComponent;
 import com.deromang.daggersample.presentation.BaseView;
+import com.deromang.daggersample.ui.activity.MainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -56,6 +57,18 @@ public abstract class BaseFragment extends Fragment implements BaseView {
         super.onDestroyView();
         if (unbinder != null) {
             unbinder.unbind();
+        }
+    }
+
+    public void showToolbar() {
+        if (getActivity() instanceof MainActivity) {
+            ((MainActivity) getActivity()).showToolbar();
+        }
+    }
+
+    public void hideToolbar() {
+        if (getActivity() instanceof MainActivity) {
+            ((MainActivity) getActivity()).hideToolbar();
         }
     }
 

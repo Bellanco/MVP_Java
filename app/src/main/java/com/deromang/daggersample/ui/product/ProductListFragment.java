@@ -40,12 +40,6 @@ public class ProductListFragment extends BaseFragment implements ProductListView
     @BindView(R.id.rvMain)
     RecyclerView rvMain;
 
-    @BindView(R.id.etFilter)
-    EditText etFilter;
-
-    @BindView(R.id.ivClose)
-    ImageView ivClose;
-
     @BindView(R.id.tvEmpty)
     TextView tvEmpty;
 
@@ -97,26 +91,24 @@ public class ProductListFragment extends BaseFragment implements ProductListView
 
         presenter.requestData();
 
-        ivClose.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_search));
-
     }
 
-    @OnTextChanged(R.id.etFilter)
-    void onChangeText(CharSequence value) {
+    public void onChangeText(CharSequence value) {
         presenter.onTextChanged(value);
-        ivClose.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_search));
-        if (value.length() > 0) {
-            ivClose.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_close));
-        }
     }
 
-    @OnClick(R.id.ivClose)
-    void onClickCross() {
-        etFilter.setText("");
-        adapter.clear();
+    public void onClickCross() {
         showText();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        showToolbar();
+        if (!productList.isEmpty()) {
+            tvEmpty.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     public void notifyDataSetChanged(List<Product> productList) {

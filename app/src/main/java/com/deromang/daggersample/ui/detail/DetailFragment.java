@@ -99,4 +99,10 @@ public class DetailFragment extends BaseFragment implements DetailView {
         getActivity().startActivity(intent);
 
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        hideToolbar();
+    }
 }

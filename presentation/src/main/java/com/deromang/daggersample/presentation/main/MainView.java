@@ -13,4 +13,7 @@ import java.util.List;
  */
 public interface MainView {
 
+    void showToolbar();
+
+    void hideToolbar();
 }
