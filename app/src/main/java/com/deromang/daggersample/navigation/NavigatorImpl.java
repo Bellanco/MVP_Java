@@ -1,6 +1,5 @@
 package com.deromang.daggersample.navigation;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,8 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.deromang.daggersample.R;
 import com.deromang.daggersample.domain.data.Product;
-import com.deromang.daggersample.ui.detail.DetailFragment;
 import com.deromang.daggersample.ui.activity.MainActivity;
+import com.deromang.daggersample.ui.detail.DetailFragment;
 import com.deromang.daggersample.ui.product.ProductListFragment;
 
 

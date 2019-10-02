@@ -1,9 +1,5 @@
 package com.deromang.daggersample.presentation.detail;
 
-import com.deromang.daggersample.domain.data.Product;
-
-import java.util.List;
-
 /**
  * Class Description.
  *
